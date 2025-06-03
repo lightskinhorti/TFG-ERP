@@ -1,0 +1,4 @@
+1. 🧪 Validar creación duplicada de emails
+2. ✅ Validar longitud mínima de la contraseña
+3. ✅ Mostrar mensaje de éxito tras crear el usuario
+4. 🔐 Validar rol recibido (por si alguien manipula el POST)

@@ -1,0 +1,191 @@
+/* ================================
+   🎨 ESTILOS GLOBALES DEL ERP
+   ================================ */
+
+   :root {
+    --color-primario: #1e3a8a;
+    --color-secundario: #3b82f6;
+    --color-fondo: #f4f6f9;
+    --color-texto: #1f2937;
+    --color-exito: #10b981;
+    --color-error: #ef4444;
+    --color-card: #ffffff;
+    --color-borde: #ddd;
+}
+
+/* 🌒 Modo oscuro sobrescribe variables */
+body.modo-oscuro {
+    --color-fondo: #121212;
+    --color-texto: #e0e0e0;
+    --color-primario: #3b82f6;
+    --color-secundario: #60a5fa;
+    --color-exito: #34d399;
+    --color-error: #f87171;
+    --color-card: #2a2a2a;
+    --color-borde: #333;
+}
+
+/* ================================
+   Estructura base con variables
+   ================================ */
+
+body {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-size: 15px;
+}
+
+/* Encabezados */
+h1, h2, h3, h4 {
+    font-weight: 600;
+    color: var(--color-primario);
+}
+
+/* Contenedores */
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: var(--color-card);
+    color: var(--color-texto);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    border: 1px solid var(--color-borde);
+}
+
+/* Tarjetas */
+.card {
+    background-color: var(--color-card);
+    color: var(--color-texto);
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    margin-bottom: 25px;
+    border-left: 5px solid var(--color-primario);
+    border: 1px solid var(--color-borde);
+}
+
+/* Botones */
+.btn {
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-primario);
+    border-color: var(--color-primario);
+    color: white;
+}
+.btn-primary:hover {
+    background-color: var(--color-secundario);
+    border-color: var(--color-secundario);
+    color: white;
+}
+
+/* Enlaces */
+a {
+    color: var(--color-primario);
+}
+a:hover {
+    color: var(--color-secundario);
+}
+
+/* Tablas */
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--color-card);
+    border: 1px solid var(--color-borde);
+    color: var(--color-texto);
+    box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+}
+
+.table th,
+.table td {
+    background-color: var(--color-card);
+    color: var(--color-texto);
+    border-top: 1px solid var(--color-borde);
+    vertical-align: middle;
+}
+
+/* Formularios */
+input, select, textarea {
+    border-radius: 6px;
+    border: 1px solid var(--color-borde);
+    padding: 8px;
+    width: 100%;
+    background-color: var(--color-card);
+    color: var(--color-texto);
+    transition: all 0.2s ease-in-out;
+}
+input:focus, select:focus, textarea:focus {
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+    outline: none;
+}
+
+/* Flash messages */
+.alert {
+    border-radius: 8px;
+    font-size: 0.95rem;
+    padding: 10px 20px;
+    color: var(--color-texto);
+}
+
+.alert-success {
+    background-color: #d1fae5;
+    color: var(--color-exito);
+}
+.alert-danger {
+    background-color: #fee2e2;
+    color: var(--color-error);
+}
+
+/* Edición inline */
+.editable {
+    cursor: pointer;
+    padding: 2px 5px;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    transition: background-color 0.2s ease;
+    color: var(--color-texto);
+}
+.editable:hover {
+    background-color: #e0e0e0;
+}
+
+/* Transiciones */
+a, button, .btn, input {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Animación entrada */
+.fade-in {
+    animation: fadeIn 0.8s ease-in-out both;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hover tarjetas */
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+}
+/* Sobrescribe el gris de Bootstrap con la variable correcta */
+.text-muted {
+    color: var(--color-texto) !important;
+    opacity: 0.6;
+}
+/* Corrige texto en botones outline en modo oscuro */
+body.modo-oscuro .btn-outline-dark {
+    color: var(--color-texto);
+    border-color: var(--color-texto);
+}
+
+body.modo-oscuro .btn-outline-dark:hover {
+    background-color: var(--color-texto);
+    color: var(--color-fondo);
+}

@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Permite acceso directo a archivos estáticos en /public
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^public/(.*)$ public/$1 [L]
+
+# Redirige todo lo demás a index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]

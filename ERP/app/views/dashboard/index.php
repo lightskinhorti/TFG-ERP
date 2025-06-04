@@ -31,6 +31,23 @@
                     </div>
                 </div>
             </div>
+            <div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card p-4 shadow-sm text-center border-start border-warning border-4 fade-in">
+            <div class="fs-3 mb-2">💶</div>
+            <h6 class="text-muted mb-1">Total facturado</h6>
+            <h2 class="text-warning"><?= number_format($totalFacturado, 2) ?> €</h2>
+        </div>
+    </div>
+
+<div class="col-md-6">
+    <div class="card p-4 shadow-sm text-center border-start border-danger border-4 fade-in">
+      <div class="fs-3 mb-2">📦</div>
+      <h6 class="text-muted mb-1">Pedidos confirmados</h6>
+      <h2 class="text-danger"><?= $pedidosConfirmados ?></h2>
+    </div>
+  </div>
+</div>
 
             <!-- Fecha de actualización -->
             <small class="text-muted d-block mb-4">📅 Actualizado: <?= $ultimaActualizacion ?></small>

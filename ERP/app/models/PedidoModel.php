@@ -93,5 +93,17 @@ class PedidoModel extends Model {
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-    
+    // app/models/PedidoModel.php
+    public function obtenerTotalFacturado() {
+        $stmt = $this->db->prepare("SELECT SUM(importe * 1.21) AS total_facturado FROM pedidos WHERE eliminado = 0");
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC)['total_facturado'] ?? 0;
+    }
+    // Devuelve el total de pedidos con estado 'confirmado'
+public function contarPedidosConfirmados() {
+    $stmt = $this->db->prepare("SELECT COUNT(*) FROM pedidos WHERE estado = 'confirmado' AND eliminado = 0");
+    $stmt->execute();
+    return $stmt->fetchColumn();
+}
+
 }
